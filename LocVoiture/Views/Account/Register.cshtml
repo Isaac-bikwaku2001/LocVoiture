@@ -1,0 +1,79 @@
+﻿@model LocVoiture.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(../../Images/site/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <h1 class="mb-3 bread">@ViewBag.Title</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Créez un nouveau compte.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Nom, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Nom, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Prenom, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Prenom, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CIN, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    <input type="file" name="CINFile" required />
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PermisConduire, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    <input type="file" name="PCFile" required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-outline-success" value="S'inscrire" />
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

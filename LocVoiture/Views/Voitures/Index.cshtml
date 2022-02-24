@@ -1,0 +1,107 @@
+﻿@model IEnumerable<LocVoiture.Models.Voiture>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(../../Images/site/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <h1 class="mb-3 bread">Management</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categorie.Libelle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modele.Marque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumImmatriculation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateMiseEnCirculation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypeCarburant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TypeTransmission)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kilometrage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Place)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bagage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrixLocation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categorie.Libelle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modele.Marque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumImmatriculation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateMiseEnCirculation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeCarburant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeTransmission)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kilometrage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Place)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bagage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrixLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.VoitureID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.VoitureID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.VoitureID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

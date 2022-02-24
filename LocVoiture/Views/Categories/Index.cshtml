@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LocVoiture.Models.Categorie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(../../Images/site/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <h1 class="mb-3 bread">Management</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Libelle)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Libelle)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CategorieID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CategorieID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

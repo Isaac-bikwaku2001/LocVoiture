@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Confirmation de l'e-mail";
+}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(../../Images/site/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <h1 class="mb-3 bread">@ViewBag.Title</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div>
+            <p>
+                Merci d'avoir confirmé votre e-mail. Veuillez @Html.ActionLink("Cliquer ici pour vous connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </p>
+        </div>
+    </div>
+</section>

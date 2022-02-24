@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LocVoiture.Models.Reservation>
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url(../../Images/site/bg_3.jpg);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <h1 class="mb-3 bread">Management</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.Prenom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Voiture.NumImmatriculation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LongueDuree)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateDebut)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateFin)
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(Item => item.User.Prenom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Item => item.User.Nom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Item => item.Voiture.NumImmatriculation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Item => item.LongueDuree)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Item => item.DateDebut)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Item => item.DateFin)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>
+
